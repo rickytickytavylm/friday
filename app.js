@@ -198,12 +198,21 @@
   syncTop();
   window.addEventListener("scroll", syncTop, { passive: true });
 
+  let navScroll = 0;
   function setNav(open) {
     if (!topbar || !navToggle) return;
     topbar.classList.toggle("nav-open", open);
     navToggle.setAttribute("aria-expanded", open ? "true" : "false");
     navToggle.setAttribute("aria-label", open ? "Закрыть меню" : "Открыть меню");
-    document.body.classList.toggle("nav-lock", open);
+    if (open) {
+      navScroll = window.scrollY;
+      document.body.style.top = `-${navScroll}px`;
+      document.body.classList.add("nav-lock");
+    } else {
+      document.body.classList.remove("nav-lock");
+      document.body.style.top = "";
+      window.scrollTo(0, navScroll);
+    }
   }
   if (navToggle) {
     navToggle.addEventListener("click", () => setNav(!topbar.classList.contains("nav-open")));

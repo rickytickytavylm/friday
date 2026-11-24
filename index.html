@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23221a12'/%3E%3Ctext x='32' y='43' font-family='Arial' font-size='34' font-weight='700' text-anchor='middle' fill='%23f4efe5'%3Eш%3C/text%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="styles.css?v=14" />
+  <link rel="stylesheet" href="styles.css?v=15" />
 </head>
 <body id="top">
 
@@ -36,16 +36,17 @@
     <a class="logo" href="#top" aria-label="Школа доктора Шурова — наверх">
       <img src="img/logo.webp" alt="Школа доктора Шурова" width="240" height="160" decoding="async" />
     </a>
-    <nav class="top-links" id="site-nav" aria-label="Разделы">
-      <a href="#school">школа</a>
-      <a href="#courses">курсы</a>
-      <a href="#team">команда</a>
-      <a class="btn btn-ink btn-sm nav-cta" href="#courses">7 700 ₽ · выбрать курс</a>
-    </nav>
-    <a class="btn btn-ink btn-sm top-cta" href="#courses">7 700 ₽ · выбрать курс</a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Открыть меню">
       <span class="nav-toggle-box" aria-hidden="true"></span>
     </button>
+    <nav class="top-links" id="site-nav" aria-label="Разделы">
+      <p class="nav-kicker">до 1 декабря · любой курс 7 700 ₽</p>
+      <a href="#school">школа</a>
+      <a href="#courses">курсы</a>
+      <a href="#team">команда</a>
+      <a class="btn btn-ink nav-cta" href="#courses">выбрать курс · 7 700 ₽</a>
+    </nav>
+    <a class="btn btn-ink btn-sm top-cta" href="#courses">7 700 ₽ · выбрать курс</a>
   </header>
 
   <!-- ══════════════ HERO ══════════════ -->
@@ -316,6 +317,6 @@
   </div>
 
   <script src="config.js"></script>
-  <script src="app.js" defer></script>
+  <script src="app.js?v=2" defer></script>
 </body>
 </html>
