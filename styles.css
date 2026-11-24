@@ -214,7 +214,7 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: radial-gradient(ellipse at 50% 42%, rgba(120, 48, 36, 0.16), rgba(74, 28, 22, 0.32) 78%);
+  background: radial-gradient(ellipse at 50% 42%, rgba(160, 60, 40, 0.06), rgba(120, 40, 28, 0.14) 80%);
   pointer-events: none;
 }
 .hero-copy { width: min(920px, 100%); }
