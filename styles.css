@@ -88,6 +88,7 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
   border-bottom-color: var(--line);
 }
 .nav-cta, .nav-kicker { display: none; }
+.top .nav-cta { display: none; }
 .nav-toggle {
   display: none;
   width: 44px;
@@ -127,7 +128,7 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
 .top:not(.is-solid):not(.nav-open) .nav-toggle-box::after { background: var(--ink); }
 .logo { display: inline-flex; align-items: center; }
 .logo img { height: 52px; width: auto; display: block; }
-.top-links { display: flex; gap: 28px; }
+.top-links { display: flex; align-items: center; gap: 28px; }
 .top-links a {
   position: relative;
   font-size: 15px;
@@ -760,6 +761,7 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 18%;
   display: block;
   transform: scale(1.05);
 }
