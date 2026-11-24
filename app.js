@@ -137,7 +137,7 @@
   function tick() {
     if (!end || !cdNum) return;
     const left = end - Date.now();
-    if (left <= 0) { cd.hidden = true; return; }
+    if (left <= 0) { if (cd) cd.hidden = true; return; }
     const d = Math.floor(left / 864e5);
     const h = Math.floor((left % 864e5) / 36e5);
     const m = Math.floor((left % 36e5) / 6e4);
