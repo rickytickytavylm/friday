@@ -127,8 +127,18 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
 .top:not(.is-solid):not(.nav-open) .nav-toggle-box,
 .top:not(.is-solid):not(.nav-open) .nav-toggle-box::before,
 .top:not(.is-solid):not(.nav-open) .nav-toggle-box::after { background: #fff; }
-.logo { display: inline-flex; align-items: center; }
-.logo img { height: 52px; width: auto; display: block; }
+.logo {
+  display: inline-flex;
+  align-items: center;
+  font-family: "Play", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.top:not(.is-solid):not(.nav-open) .logo { color: #fff; }
 .top-links { display: flex; align-items: center; gap: 28px; }
 .top-links a {
   position: relative;
@@ -953,7 +963,7 @@ body.nav-lock .mob-bar { visibility: hidden; }
 
 @media (max-width: 780px) {
   :root { --nav-h: 62px; }
-  .logo img { height: 44px; }
+  .logo { font-size: 11px; letter-spacing: 0.1em; }
   .top-cta { display: none; }
   .nav-toggle { display: inline-flex; align-items: center; justify-content: center; margin-left: auto; }
   .top-links { display: none; }
