@@ -220,6 +220,7 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
 .hero-copy { width: min(920px, 100%); }
 .hero .bf-pill,
 .hero-h,
+.hero-kicker,
 .hero-sub,
 .hero-note {
   text-shadow: 0 1px 16px rgba(74, 28, 22, 0.28);
@@ -254,9 +255,19 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
   line-height: 0.98;
   letter-spacing: -0.045em;
 }
+.hero-kicker {
+  margin: 28px auto 0;
+  max-width: 18em;
+  font-family: var(--display);
+  font-weight: 650;
+  font-size: clamp(20px, 2.2vw, 28px);
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
 .hero-sub {
   max-width: 640px;
-  margin: 30px auto 0;
+  margin: 18px auto 0;
   font-size: clamp(16px, 1.5vw, 19px);
   color: rgba(255, 246, 240, 0.92);
 }
@@ -978,7 +989,8 @@ body.nav-lock .mob-bar { visibility: hidden; }
 
   .hero { padding: calc(var(--nav-h) + 20px) 20px 48px; }
   .hero-h { font-size: clamp(48px, 13vw, 72px); }
-  .hero-sub { margin-top: 22px; }
+  .hero-kicker { font-size: clamp(18px, 5vw, 24px); }
+  .hero-sub { margin-top: 14px; }
   .btn-lg { padding: 17px 28px; font-size: 16px; width: 100%; max-width: 420px; }
 
   .hero-stage {
