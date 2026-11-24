@@ -6,17 +6,17 @@
    ═══════════════════════════════════════════════════════════ */
 
 :root {
-  /* светлая пыльная роза, в тон ткани */
-  --cream:  #f6f0ec;
-  --paper:  #fbf7f5;
-  --ink:    #3a312e;
-  --ink-2:  #7a6864;
-  --pine:   #d09298;
-  --pine-d: #c07d84;
-  --bark:   #d4a8ac;
-  --sand:   #f0e0dc;
-  --clay:   #e4cdc8;
-  --wine:   #c48986;
+  /* красный акцент и тёплый фон, розовый снят */
+  --cream:  #f5f2ef;
+  --paper:  #fbf9f7;
+  --ink:    #1c1614;
+  --ink-2:  #6d625c;
+  --pine:   #ed3833;
+  --pine-d: #c42e2a;
+  --bark:   #090909;
+  --sand:   #efe6e2;
+  --clay:   #e4d4ce;
+  --wine:   #ed3833;
   --line:   rgba(46, 33, 28, 0.14);
   --line-l: rgba(255, 246, 240, 0.22);
 
@@ -121,11 +121,12 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
 .top.nav-open .nav-toggle-box { background: transparent; }
 .top.nav-open .nav-toggle-box::before { top: 0; transform: rotate(45deg); }
 .top.nav-open .nav-toggle-box::after { top: 0; transform: rotate(-45deg); }
-.top:not(.is-solid):not(.nav-open) .top-links a { color: var(--ink); }
-.top:not(.is-solid):not(.nav-open) .top-links a::after { background: var(--ink); }
+.top:not(.is-solid):not(.nav-open) .top-links a { color: rgba(255, 255, 255, 0.92); }
+.top:not(.is-solid):not(.nav-open) .top-links a::after { background: #fff; }
+.top:not(.is-solid):not(.nav-open) .btn-ink { background: #fff; color: #111; }
 .top:not(.is-solid):not(.nav-open) .nav-toggle-box,
 .top:not(.is-solid):not(.nav-open) .nav-toggle-box::before,
-.top:not(.is-solid):not(.nav-open) .nav-toggle-box::after { background: var(--ink); }
+.top:not(.is-solid):not(.nav-open) .nav-toggle-box::after { background: #fff; }
 .logo { display: inline-flex; align-items: center; }
 .logo img { height: 52px; width: auto; display: block; }
 .top-links { display: flex; align-items: center; gap: 28px; }
@@ -195,7 +196,7 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
   padding: calc(var(--nav-h) + 28px) 24px 64px;
   text-align: center;
   color: #fff;
-  background: #e7d4d0;
+  background: #0c1014;
   overflow: hidden;
 }
 .hero-bg {
@@ -210,14 +211,14 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 42%;
+  object-position: center 62%;
 }
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(180deg, rgba(214, 156, 162, 0.34) 0%, rgba(198, 124, 134, 0.46) 100%);
+  background: linear-gradient(180deg, rgba(6, 8, 12, 0.5) 0%, rgba(6, 8, 12, 0.22) 46%, rgba(6, 8, 12, 0.4) 100%);
   pointer-events: none;
 }
 .hero-copy { width: min(920px, 100%); }
@@ -225,10 +226,10 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
 .hero-h,
 .hero-kicker,
 .hero-sub,
-.hero-note { text-shadow: 0 2px 18px rgba(140, 72, 82, 0.4); }
+.hero-note { text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45); }
 .hero .bf-dot { background: #fff; }
-.hero .btn-acc { background: #fff; color: #9a6462; }
-.hero .btn-acc:hover { background: var(--pine); color: #fff; }
+.hero .btn-acc { background: #ed3833; color: #fff; }
+.hero .btn-acc:hover { background: #fff; color: #111; }
 .bf-pill {
   display: inline-flex;
   align-items: center;
@@ -559,7 +560,13 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
 
 /* ═══════════ BANDS ═══════════ */
 .band { padding: 110px 0; }
-.band-dark { background: var(--bark); color: var(--cream); }
+.band-dark {
+  background:
+    radial-gradient(90% 80% at 100% 0%, rgba(237, 56, 51, 0.2), transparent 46%),
+    radial-gradient(70% 60% at 0% 100%, rgba(16, 48, 56, 0.55), transparent 52%),
+    #090909;
+  color: #f7f4f1;
+}
 .band-pine  { background: var(--pine);  color: #fff; }
 
 .num {
@@ -1014,6 +1021,7 @@ body.nav-lock .mob-bar { visibility: hidden; }
   .top.nav-open .nav-toggle-box::after { background: var(--ink); }
 
   .hero { padding: calc(var(--nav-h) + 20px) 20px 48px; }
+  .hero-bg img { object-position: center 78%; }
   .hero-h { font-size: clamp(42px, 11.5vw, 64px); }
   .hero-kicker { font-size: clamp(18px, 5vw, 24px); }
   .hero-sub { margin-top: 14px; }
