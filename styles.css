@@ -195,7 +195,7 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
   padding: calc(var(--nav-h) + 28px) 24px 64px;
   text-align: center;
   color: #fff6f0;
-  background: #ce8981;
+  background: #d04335;
   overflow: hidden;
 }
 .hero-bg {
