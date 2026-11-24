@@ -187,6 +187,31 @@
     });
   }
 
+  /* ── хиро: ткань с экрана входа, крутится без остановки ── */
+  const film = document.querySelector(".hero-film");
+  if (film && reduced) {
+    film.removeAttribute("autoplay");
+    film.pause();
+  } else if (film) {
+    const playFilm = () => {
+      film.muted = true;
+      film.defaultMuted = true;
+      const pending = film.play();
+      if (pending && pending.catch) pending.catch(() => {});
+    };
+    playFilm();
+    film.addEventListener("loadeddata", playFilm);
+    film.addEventListener("canplay", playFilm);
+    film.addEventListener("ended", () => {
+      film.currentTime = 0;
+      playFilm();
+    });
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) playFilm();
+    });
+    document.addEventListener("touchstart", playFilm, { passive: true, once: true });
+  }
+
   /* ── шапка: прозрачная на хиро, плотная после прокрутки ── */
   const topbar = document.querySelector(".top");
   const navToggle = document.querySelector(".nav-toggle");

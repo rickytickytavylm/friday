@@ -120,12 +120,11 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
 .top.nav-open .nav-toggle-box { background: transparent; }
 .top.nav-open .nav-toggle-box::before { top: 0; transform: rotate(45deg); }
 .top.nav-open .nav-toggle-box::after { top: 0; transform: rotate(-45deg); }
-.top:not(.is-solid):not(.nav-open) .top-links a { color: rgba(255, 246, 240, 0.92); }
-.top:not(.is-solid):not(.nav-open) .top-links a::after { background: #fff6f0; }
-.top:not(.is-solid):not(.nav-open) .btn-ink { background: #fff6f0; color: #6e2c25; }
+.top:not(.is-solid):not(.nav-open) .top-links a { color: var(--ink); }
+.top:not(.is-solid):not(.nav-open) .top-links a::after { background: var(--ink); }
 .top:not(.is-solid):not(.nav-open) .nav-toggle-box,
 .top:not(.is-solid):not(.nav-open) .nav-toggle-box::before,
-.top:not(.is-solid):not(.nav-open) .nav-toggle-box::after { background: #fff6f0; }
+.top:not(.is-solid):not(.nav-open) .nav-toggle-box::after { background: var(--ink); }
 .logo { display: inline-flex; align-items: center; }
 .logo img { height: 52px; width: auto; display: block; }
 .top-links { display: flex; gap: 28px; }
@@ -194,8 +193,8 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
   min-height: 100svh;
   padding: calc(var(--nav-h) + 28px) 24px 64px;
   text-align: center;
-  color: #fff6f0;
-  background: #d04335;
+  color: var(--ink);
+  background: #e6dfd6;
   overflow: hidden;
 }
 .hero-bg {
@@ -203,18 +202,21 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
   inset: 0;
   z-index: -2;
 }
-.hero-bg img {
+.hero-bg img,
+.hero-bg video {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 42%;
 }
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: radial-gradient(ellipse at 50% 42%, rgba(160, 60, 40, 0.06), rgba(120, 40, 28, 0.14) 80%);
+  background: radial-gradient(ellipse at 50% 46%, rgba(255, 250, 246, 0.28), rgba(255, 250, 246, 0) 58%);
   pointer-events: none;
 }
 .hero-copy { width: min(920px, 100%); }
@@ -222,12 +224,10 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
 .hero-h,
 .hero-kicker,
 .hero-sub,
-.hero-note {
-  text-shadow: 0 1px 16px rgba(74, 28, 22, 0.28);
-}
-.hero .bf-dot { background: #fff6f0; }
-.hero .btn-acc { background: #fff6f0; color: #6e2c25; }
-.hero .btn-acc:hover { background: #fff; color: var(--ink); }
+.hero-note { text-shadow: none; }
+.hero .bf-dot { background: var(--pine); }
+.hero .btn-acc { background: var(--ink); color: #fff6f0; }
+.hero .btn-acc:hover { background: var(--pine-d); color: #fff; }
 .bf-pill {
   display: inline-flex;
   align-items: center;
@@ -251,7 +251,7 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
 .hero-h {
   margin-top: 34px;
   font-weight: 700;
-  font-size: clamp(52px, 9.2vw, 124px);
+  font-size: clamp(46px, 8.4vw, 108px);
   line-height: 0.98;
   letter-spacing: -0.045em;
 }
@@ -263,23 +263,23 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
   font-size: clamp(20px, 2.2vw, 28px);
   line-height: 1.25;
   letter-spacing: -0.03em;
-  color: #fff;
+  color: var(--ink);
 }
 .hero-sub {
   max-width: 640px;
   margin: 18px auto 0;
   font-size: clamp(16px, 1.5vw, 19px);
-  color: rgba(255, 246, 240, 0.92);
+  color: var(--ink-2);
 }
 
 .hero-cta { margin-top: 38px; }
 .hero-note {
   margin-top: 16px;
   font-size: 14px;
-  color: rgba(255, 246, 240, 0.9);
+  color: var(--ink-2);
 }
-.hero-note b { color: #fff; }
-.cd b { color: #fff; font-variant-numeric: tabular-nums; }
+.hero-note b { color: var(--ink); }
+.cd b { color: var(--ink); font-variant-numeric: tabular-nums; }
 
 /* ── сцена с фото и плавающими карточками ── */
 .hero-stage {
@@ -1012,7 +1012,7 @@ body.nav-lock .mob-bar { visibility: hidden; }
   .top.nav-open .nav-toggle-box::after { background: var(--ink); }
 
   .hero { padding: calc(var(--nav-h) + 20px) 20px 48px; }
-  .hero-h { font-size: clamp(48px, 13vw, 72px); }
+  .hero-h { font-size: clamp(42px, 11.5vw, 64px); }
   .hero-kicker { font-size: clamp(18px, 5vw, 24px); }
   .hero-sub { margin-top: 14px; }
   .btn-lg { padding: 17px 28px; font-size: 16px; width: 100%; max-width: 420px; }
