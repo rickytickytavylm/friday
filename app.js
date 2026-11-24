@@ -187,6 +187,34 @@
     });
   }
 
+  /* ── шапка: прозрачная на хиро, плотная после прокрутки ── */
+  const topbar = document.querySelector(".top");
+  const navToggle = document.querySelector(".nav-toggle");
+  const siteNav = document.getElementById("site-nav");
+  function syncTop() {
+    if (!topbar) return;
+    topbar.classList.toggle("is-solid", window.scrollY > 12);
+  }
+  syncTop();
+  window.addEventListener("scroll", syncTop, { passive: true });
+
+  function setNav(open) {
+    if (!topbar || !navToggle) return;
+    topbar.classList.toggle("nav-open", open);
+    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    navToggle.setAttribute("aria-label", open ? "Закрыть меню" : "Открыть меню");
+    document.body.classList.toggle("nav-lock", open);
+  }
+  if (navToggle) {
+    navToggle.addEventListener("click", () => setNav(!topbar.classList.contains("nav-open")));
+  }
+  if (siteNav) {
+    siteNav.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setNav(false)));
+  }
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && topbar && topbar.classList.contains("nav-open")) setNav(false);
+  });
+
   /* ── липкая мобильная плашка: после первого экрана ── */
   const mobBar = document.getElementById("mobBar");
   const final = document.getElementById("final");
