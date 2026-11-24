@@ -6,17 +6,17 @@
    ═══════════════════════════════════════════════════════════ */
 
 :root {
-  /* слоновая кость с видео и насыщенный янтарь */
-  --cream:  #f4f0e7;
-  --paper:  #fbf8f2;
-  --ink:    #2a2318;
-  --ink-2:  #6a5c48;
-  --pine:   #c17a1a;
-  --pine-d: #9a6014;
-  --bark:   #6e4812;
-  --sand:   #eadcc4;
-  --clay:   #d7c4a4;
-  --wine:   #c17a1a;
+  /* светлая пыльная роза, в тон ткани */
+  --cream:  #f6f0ec;
+  --paper:  #fbf7f5;
+  --ink:    #3a312e;
+  --ink-2:  #7a6864;
+  --pine:   #d09298;
+  --pine-d: #c07d84;
+  --bark:   #d4a8ac;
+  --sand:   #f0e0dc;
+  --clay:   #e4cdc8;
+  --wine:   #c48986;
   --line:   rgba(46, 33, 28, 0.14);
   --line-l: rgba(255, 246, 240, 0.22);
 
@@ -120,12 +120,11 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
 .top.nav-open .nav-toggle-box { background: transparent; }
 .top.nav-open .nav-toggle-box::before { top: 0; transform: rotate(45deg); }
 .top.nav-open .nav-toggle-box::after { top: 0; transform: rotate(-45deg); }
-.top:not(.is-solid):not(.nav-open) .top-links a { color: rgba(255, 250, 243, 0.94); }
-.top:not(.is-solid):not(.nav-open) .top-links a::after { background: #fffaf3; }
-.top:not(.is-solid):not(.nav-open) .btn-ink { background: #fffaf3; color: #6e4812; }
+.top:not(.is-solid):not(.nav-open) .top-links a { color: var(--ink); }
+.top:not(.is-solid):not(.nav-open) .top-links a::after { background: var(--ink); }
 .top:not(.is-solid):not(.nav-open) .nav-toggle-box,
 .top:not(.is-solid):not(.nav-open) .nav-toggle-box::before,
-.top:not(.is-solid):not(.nav-open) .nav-toggle-box::after { background: #fffaf3; }
+.top:not(.is-solid):not(.nav-open) .nav-toggle-box::after { background: var(--ink); }
 .logo { display: inline-flex; align-items: center; }
 .logo img { height: 52px; width: auto; display: block; }
 .top-links { display: flex; gap: 28px; }
@@ -194,8 +193,8 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
   min-height: 100svh;
   padding: calc(var(--nav-h) + 28px) 24px 64px;
   text-align: center;
-  color: #fffaf3;
-  background: #6e4812;
+  color: #fff;
+  background: #e7d4d0;
   overflow: hidden;
 }
 .hero-bg {
@@ -217,7 +216,7 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(180deg, rgba(58, 36, 8, 0.34) 0%, rgba(48, 28, 6, 0.5) 48%, rgba(32, 18, 4, 0.62) 100%);
+  background: linear-gradient(180deg, rgba(214, 156, 162, 0.34) 0%, rgba(198, 124, 134, 0.46) 100%);
   pointer-events: none;
 }
 .hero-copy { width: min(920px, 100%); }
@@ -225,10 +224,10 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
 .hero-h,
 .hero-kicker,
 .hero-sub,
-.hero-note { text-shadow: 0 1px 18px rgba(32, 18, 4, 0.35); }
-.hero .bf-dot { background: #fffaf3; }
-.hero .btn-acc { background: var(--pine); color: #fffaf3; }
-.hero .btn-acc:hover { background: #fffaf3; color: #6e4812; }
+.hero-note { text-shadow: 0 2px 18px rgba(140, 72, 82, 0.4); }
+.hero .bf-dot { background: #fff; }
+.hero .btn-acc { background: #fff; color: #9a6462; }
+.hero .btn-acc:hover { background: var(--pine); color: #fff; }
 .bf-pill {
   display: inline-flex;
   align-items: center;
@@ -264,23 +263,23 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
   font-size: clamp(20px, 2.2vw, 28px);
   line-height: 1.25;
   letter-spacing: -0.03em;
-  color: #fffaf3;
+  color: #fff;
 }
 .hero-sub {
   max-width: 640px;
   margin: 18px auto 0;
   font-size: clamp(16px, 1.5vw, 19px);
-  color: rgba(255, 250, 243, 0.9);
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .hero-cta { margin-top: 38px; }
 .hero-note {
   margin-top: 16px;
   font-size: 14px;
-  color: rgba(255, 250, 243, 0.88);
+  color: rgba(255, 255, 255, 0.9);
 }
-.hero-note b { color: #fffaf3; }
-.cd b { color: #fffaf3; font-variant-numeric: tabular-nums; }
+.hero-note b { color: #fff; }
+.cd b { color: #fff; font-variant-numeric: tabular-nums; }
 
 /* ── сцена с фото и плавающими карточками ── */
 .hero-stage {
@@ -819,8 +818,8 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
 /* ── подвал ── */
 .foot {
   padding: 72px 0 48px;
-  background: #ebe4d4;
-  color: #5c5144;
+  background: #f3e8e4;
+  color: #6a5854;
   font-size: 15px;
   line-height: 1.5;
   border-top: 1px solid rgba(46, 33, 28, 0.08);
@@ -838,9 +837,9 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #8a7358;
+  color: #9a7e78;
 }
-.foot-note { max-width: 36ch; color: #6e624f; }
+.foot-note { max-width: 36ch; color: #7a6560; }
 .foot-col { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
 .foot a { text-decoration: none; }
 .foot a:hover { color: var(--pine); }
@@ -853,7 +852,7 @@ h1, h2, h3, .btn, .num, .bf-pill, .fc-name, .price b, .chip, .mob-btn, .logo-wor
   padding-top: 22px;
   border-top: 1px solid rgba(46, 33, 28, 0.12);
   font-size: 13.5px;
-  color: #7a6e5c;
+  color: #8a726c;
 }
 
 /* ── форма оплаты GetCourse ── */
